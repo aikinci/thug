@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # All commands are executed in one line to downsize the resulting docker image resulting in a 60% - 70% size savings
 RUN apt-get update && apt-get -y dist-upgrade && \
 	apt-get -y install --no-install-recommends graphviz librabbitmq1 nano python-chardet python-cssutils python-html5lib python-httplib2 libemu2 python-lxml python-magic python-pika python-pip python-pydot python-pymongo python-pyparsing python-requests python-yara python-zope.interface vim build-essential curl git gyp libboost-python-dev libboost-thread-dev libboost-system-dev python-dev subversion libemu-dev && \
-	pip install -q jsbeautifier rarfile beautifulsoup4 pefile && \
+	pip install -q jsbeautifier rarfile beautifulsoup4 pefile requesocks && \
 	svn checkout http://pyv8.googlecode.com/svn/trunk/ /usr/local/src/pyv8 && \
 	curl -s https://raw.githubusercontent.com/buffer/thug/master/patches/PyV8-patch1.diff -o /usr/local/src/PyV8-patch1.diff && \
 	patch -d /usr/local/src/ -p0 < /usr/local/src/PyV8-patch1.diff && \
