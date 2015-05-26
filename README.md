@@ -18,7 +18,7 @@ Download latest container
 
 This will mount your hosts ~/logs dir and enable to keep the logs on the host
 
-    docker run -it -v ~/logs:/logs honeynet/thug  /bin/bash
+    docker run -it -v ~/logs:/logs honeynet/thug
 
 inside the container run this to analyze 20 random samples from thug 
 
