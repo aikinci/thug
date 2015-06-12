@@ -79,3 +79,7 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install --no-install
 		rm -rf /var/lib/apt/lists/* /usr/local/src/pylibemu /usr/local/src/pyv8/ /opt/src/requirements.txt && \
 		dpkg -l |grep ^rc |awk '{print $2}' |xargs dpkg --purge && \
 	 	rm -f /opt/thug/samples/exploits/blackhole.html
+
+COPY run.sh /usr/bin/run.sh
+RUN chmod +x /usr/bin/run.sh
+ENTRYPOINT ["/usr/bin/run.sh"]
