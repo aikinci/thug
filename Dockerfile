@@ -26,6 +26,7 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install --no-install
 			mongodb-server \
 			nano \
 			python-lxml \
+			python-magic \
 			python-pip \
 			python-setuptools \
 			python2.7 \
