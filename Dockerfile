@@ -49,7 +49,7 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install --no-install
 		# thug
 		git clone https://github.com/buffer/thug.git /opt/thug && \
 		# disable mongodb
-		sed -i '/^[[:blank:]]*\[mongodb\]$/{n;s/True/False/g;}' /opt/thug/src/Logging/logging.conf
+		sed -i '/^[[:blank:]]*\[mongodb\]$/{n;s/True/False/g;}' /opt/thug/src/Logging/logging.conf && \
 
 		# PyV8 and V8
 	 	svn checkout http://pyv8.googlecode.com/svn/trunk/ -r586 /usr/local/src/pyv8 && \
