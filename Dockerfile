@@ -22,8 +22,6 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install --no-install
 			libpcre3 \
 			librabbitmq1 \
 			libtool \
-			mongodb \
-			mongodb-server \
 			nano \
 			python-lxml \
 			python-pip \
@@ -50,6 +48,8 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install --no-install
 
 		# thug
 		git clone https://github.com/buffer/thug.git /opt/thug && \
+		# disable mongodb
+		sed -i '/^[[:blank:]]*\[mongodb\]$/{n;s/True/False/g;}' /opt/thug/src/Logging/logging.conf
 
 		# PyV8 and V8
 	 	svn checkout http://pyv8.googlecode.com/svn/trunk/ -r586 /usr/local/src/pyv8 && \
@@ -79,7 +79,3 @@ RUN apt-get update && apt-get -y dist-upgrade && apt-get -y install --no-install
 		rm -rf /var/lib/apt/lists/* /usr/local/src/pylibemu /usr/local/src/pyv8/ /opt/src/requirements.txt && \
 		dpkg -l |grep ^rc |awk '{print $2}' |xargs dpkg --purge && \
 	 	rm -f /opt/thug/samples/exploits/blackhole.html
-
-COPY run.sh /usr/bin/run.sh
-RUN chmod +x /usr/bin/run.sh
-ENTRYPOINT ["/usr/bin/run.sh"]
