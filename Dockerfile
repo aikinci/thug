@@ -11,7 +11,6 @@ COPY get-pip.py /opt/
 COPY requirements.txt /opt/
 COPY pyv8_r586.tar.bz2 /opt/
 COPY v8_r19632.tar.bz2 /opt/
-COPY checkinstall.py /opt/
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
     apt-get -y install --no-install-recommends \
@@ -111,6 +110,4 @@ RUN apt-get update && \
 		apt-get -y autoremove && \
 		dpkg -l |grep ^rc |awk '{print $2}' |xargs dpkg --purge && \
 	 	rm -f /opt/thug/samples/exploits/blackhole.html && \
-    ldconfig && \
-    python /opt/checkinstall.py && \
-    python /opt/thug/src/thug.py
+    ldconfig
