@@ -41,5 +41,6 @@ try:
 except ImportError:
     print("Androguard not found - APK analysis disabled")
     print ("All requirements for Thug except Androguard are satisfied.")
+    sys.exit(-1)
 
 print ("All requirements for Thug are satisfied.")
