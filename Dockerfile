@@ -1,6 +1,7 @@
 # This is a Dockerfile for creating a Thug https://github.com/buffer/thug Container from the latest
 # Ubuntu base image. This is known bo be working on Ubuntu 14.04. It should work on any later version
 # This is a full installation of Thug including all optional packages used for distributed operation
+# Excluding Androguard
 FROM ubuntu:latest
 MAINTAINER ali@ikinci.info
 ENV LC_ALL C
@@ -106,8 +107,8 @@ RUN apt-get update && \
       python-dev \
       subversion \
       zlib1g-dev && \
-	 	apt-get clean && apt-get autoclean && \
-		apt-get -y autoremove && \
-		dpkg -l |grep ^rc |awk '{print $2}' |xargs dpkg --purge && \
-	 	rm -f /opt/thug/samples/exploits/blackhole.html && \
+    apt-get clean && apt-get autoclean && \
+    apt-get -y autoremove && \
+    dpkg -l |grep ^rc |awk '{print $2}' |xargs dpkg --purge && \
+    rm -f /opt/thug/samples/exploits/blackhole.html && \
     ldconfig
