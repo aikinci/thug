@@ -1,9 +1,9 @@
 Thug
 ====
 
-A dockerized Thug https://github.com/buffer/thug . Thug version 0.6.5
+A dockerized Thug https://github.com/buffer/thug . Thug version 0.6.7
 
-Get it from the Honeynet Project's Docker repository https://registry.hub.docker.com/u/honeynet/thug/
+Get it from the Honeynet Project's Docker repository https://hub.docker.com/r/honeynet/thug/
 
 This automated build is kindly maintained by Ali Ikinci https://github.com/aikinci/thug
 

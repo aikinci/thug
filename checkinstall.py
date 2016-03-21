@@ -3,11 +3,11 @@ import sys
 print ("Checking proper Thug installation...")
 try:
     import bs4
-    import certifi
     import cffi
     import chardet
     import cssutils
     import decorator
+    import future
     import html5lib
     import jsbeautifier
     import lxml
@@ -22,9 +22,9 @@ try:
     import pyparsing
     import PyV8
     import rarfile
-    import requesocks
     import requests
     import six
+    import socks
     import ssdeep
     import yara
     import zope.interface
